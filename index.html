@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
+    <script src="playlist.js"></script>
+    <link rel="stylesheet" href=“style.css”>
+</head>
+
+<body>
+    <!-- ng-app:  the scope of the entire application.  everything outside is static -->
+    <main ng-app="Playlist">
+        <section ng-controller='Songs'>
+            <ul>
+                <li ng-repeat="song in playlist">
+                    <span class="playStatus" ng-if="song.playing === true"></span>
+                    <span class="playStatus" ng-if="song.playing === false"></span>
+                    <button ng-click="update(song)"><span ng-if="song.playing === true">Stop</span><span ng-if="song.playing === false">Play</span></button>
+                    {{ song.title }} by {{ song.artist }} | {{ song.album }} | {{song.duration.mins}}:{{song.duration.secs}} | {{song.art}} 
+                </li>
+            </ul>
+
+            <p>{{currentSong.title}} by {{currentSong.artist}} is playing<img ng-src="{{currentSong.art}}"></p>
+
+        </section>
+
+    </main>
+</body>
+<html>
