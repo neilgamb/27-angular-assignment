@@ -5,23 +5,33 @@
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
     <script src="playlist.js"></script>
-    <link rel="stylesheet" href=“style.css”>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <!-- ng-app:  the scope of the entire application.  everything outside is static -->
     <main ng-app="Playlist">
-        <section ng-controller='Songs'>
+        <section class="list" ng-controller='Songs'>
+
+            <div>
+                <h2>CURRENTLY PLAYING</h2>
+                <p><img ng-src="{{currentSong.art}}"><span id="currentSong">{{currentSong.title}} by {{currentSong.artist}} is playing</span></p>
+            </div>
+
             <ul>
-                <li ng-repeat="song in playlist">
+                <li ng-class = "{'highlight' : song.playing}" ng-repeat="song in playlist">
                     <span class="playStatus" ng-if="song.playing === true"></span>
                     <span class="playStatus" ng-if="song.playing === false"></span>
-                    <button ng-click="update(song)"><span ng-if="song.playing === true">Stop</span><span ng-if="song.playing === false">Play</span></button>
-                    {{ song.title }} by {{ song.artist }} | {{ song.album }} | {{song.duration.mins}}:{{song.duration.secs}} | {{song.art}} 
+                    <button ng-click="update(song)"><span ng-if="song.playing === true"><i class="fa fa-stop-circle" aria-hidden="true"></i></span><span ng-if="song.playing === false"><i class="fa fa-play-circle" aria-hidden="true"></i></span></button>
+                    <span class="firstLine">{{ song.title }} by {{ song.artist }}</span>
+                    <p class="secondLine">{{ song.album }} | {{song.duration.mins}}:{{song.duration.secs}}
+                        <button ng-click="favorite(song)">
+                            <span ng-if="song.fav === true"> <i class="fa fa-heart" aria-hidden="true"></i></span>
+                            <span ng-if="song.fav === false"> <i class="fa fa-heart" aria-hidden="true"></i></span>
+                        </button></p>
                 </li>
             </ul>
-
-            <p>{{currentSong.title}} by {{currentSong.artist}} is playing<img ng-src="{{currentSong.art}}"></p>
 
         </section>
 

@@ -1,0 +1,86 @@
+@import 'node_modules/foundation-sites/scss/foundation';
+@include foundation-global-styles;
+@include foundation-grid;
+
+
+body {
+    @include grid-row();
+    background-image: url('http://cdn.wonderfulengineering.com/wp-content/uploads/2013/12/metal-wallpaper-3.jpg');
+    color: white;
+    font-size: 1em;
+
+    ul {
+        @include grid-column(8);
+        background-color: #4F4949;
+        color: white;
+        opacity: .95;
+        border-radius: 20px;
+        list-style: none;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    div {
+        @include grid-column(4);
+        background-color: #035940;
+        position: fixed;
+        margin-top: 20px;
+        border-radius: 10px;
+        opacity: .95;
+    }
+}
+
+#currentSong {
+    margin-left: 10px;
+}
+
+.highlight {
+    background-color: black;
+    opacity: .5
+}
+
+.fa {
+    color: #87EDB7;
+    font-size: 1.3em
+}
+
+.fa-heart {
+    color: white;
+    font-size: 1em;
+}
+
+.firstLine {
+    padding-bottom: 2px;
+}
+
+.secondLine {
+    font-style: italic;
+    margin: 0px 0px 10px 20px;
+    font-size: .8em;
+}
+
+@media (max-width: 1000px) {
+
+body {
+    @include grid-row();
+
+    ul {
+        @include grid-column(12);
+        font-size: 2.3em;
+        z-index: 0;
+        margin-top: 140px;
+    }
+
+    div {
+        @include grid-column(12);
+        display: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        opacity: 1;
+        margin: 0px;
+    }
+
+}
+
+}
