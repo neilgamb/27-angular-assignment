@@ -2,7 +2,6 @@
 // Create a 'module' (in this case our application)
 let app = angular.module('Playlist', []);
 
-
 app.controller('Songs', function($scope){
 
     let emptySong = {

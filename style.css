@@ -1391,9 +1391,7 @@ body {
     background-color: #4F4949;
     color: white;
     opacity: .95;
-    border-radius: 20px;
     list-style: none;
-    margin: 20px;
     padding: 20px; }
     @media print, screen and (min-width: 40em) {
       body ul {
@@ -1408,8 +1406,7 @@ body {
     padding-left: 0.625rem;
     background-color: #035940;
     position: fixed;
-    margin-top: 20px;
-    border-radius: 10px;
+    margin-top: 16px;
     opacity: .95; }
     @media print, screen and (min-width: 40em) {
       body div {
