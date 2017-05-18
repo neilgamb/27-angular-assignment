@@ -16,6 +16,7 @@ body {
         opacity: .95;
         list-style: none;
         padding: 20px;
+        border-top-right-radius: 20px;
     }
 
     div {
@@ -24,6 +25,8 @@ body {
         position: fixed;
         margin-top: 16px;
         opacity: .95;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
     }
 }
 
